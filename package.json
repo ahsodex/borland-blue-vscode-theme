@@ -1,0 +1,34 @@
+{
+  "name": "borland-blue-vscode-theme",
+  "displayName": "Borland Blue VS Code Theme",
+  "description": "A high-contrast cobalt blue VS Code theme inspired by the classic Vim blue scheme and old Borland C/MS Word blue screens.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahsodex/borland-blue-vscode-theme.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Borland Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/borland-blue-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package --no-dependencies --allow-missing-repository --skip-license"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.9.2"
+  }
+}

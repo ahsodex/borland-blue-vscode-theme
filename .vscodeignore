@@ -1,0 +1,7 @@
+.vscode/**
+.gitignore
+README.md
+**/*.map
+**/*.ts
+**/*.tsx
+node_modules/**
