@@ -48,6 +48,38 @@ The theme is now your permanent default across all VS Code windows.
 
 This is session-only — the theme is gone when the host window closes.
 
+## Troubleshooting
+
+### Title bar, activity bar, status bar and tabs are all plain blue
+
+If those bars lose their distinct shades and take on the `#00008B` editor
+background, VS Code has enrolled you in the `workbench.experimental.modernUI`
+experiment (previously `workbench.experimental.floatingPanels`). It is off by
+default, but the experimentation service enables it automatically on a subset of
+installs, so it can appear overnight without any change on your side.
+
+When it is active the workbench applies:
+
+```css
+.monaco-workbench.floating-panels .part.activitybar,
+.monaco-workbench.floating-panels .part.statusbar,
+.monaco-workbench.floating-panels .part.titlebar {
+  background-color: transparent !important;
+}
+```
+
+Those bars become transparent so the editor background shows through. The
+`!important` beats the inline styles VS Code generates from theme colors, so no
+theme or `workbench.colorCustomizations` entry can override it.
+
+To restore the intended look, add this to your user `settings.json`:
+
+```jsonc
+"workbench.experimental.modernUI": false
+```
+
+The change applies immediately; no reload required.
+
 ## Notes
 
 The palette is intentionally high-contrast and nostalgic. If you want a softer variant (dimmer yellow or lighter blue), you can duplicate this theme JSON and tweak:
